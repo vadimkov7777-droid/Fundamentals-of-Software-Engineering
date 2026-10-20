@@ -1,8 +1,17 @@
-print(int('123е'))
-print(int('91.4'))
-print(int(524.345 ** 435345345311145345))
-print(int('7.1 + 4'))
-print(int('4' - 2))
-print(int('4 - 2'))
-print(int('42'))
-print(int(-12.12))
+expressions = [
+    "'123е'",
+    "'91.4'",
+    "524.345 ** 435345345311145345",
+    "'7.1 + 4'",
+    "'4' - 2",
+    "'4 - 2'",
+    "'42'",
+    "-12.12"
+]
+
+for expression in expressions:
+    try:
+        result = eval(expression)
+        print(expression, "->", int(result))
+    except Exception as error:
+        print(expression, "->", type(error).__name__)
