@@ -12,3 +12,8 @@ for product in data['products']:
     items.append({"name":product['html_url'], "price": product['prices']['price_min']['amount'], "gb": gb, "desc": {product['description_list'][0]}})
 
 items.sort(key=lambda item: float(item['price']))
+
+prices = []
+for item in items:
+    prices.append({"url": item['name'], 'price': (float(item['price'])/float(item['gb'])), "desc": item['desc']})
+
