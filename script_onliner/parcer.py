@@ -11,3 +11,4 @@ for product in data['products']:
     gb = gb.replace(" ГБ", "")
     items.append({"name":product['html_url'], "price": product['prices']['price_min']['amount'], "gb": gb, "desc": {product['description_list'][0]}})
 
+items.sort(key=lambda item: float(item['price']))
