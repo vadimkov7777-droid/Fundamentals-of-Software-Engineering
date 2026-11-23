@@ -19,3 +19,5 @@ for item in items:
 
 prices.sort(key=lambda item: float(item['price']))
 
+for price in prices:
+    print(f"url:{price['url']} Стоимость за гб: {price['price']} GB total: {price['desc']}")
