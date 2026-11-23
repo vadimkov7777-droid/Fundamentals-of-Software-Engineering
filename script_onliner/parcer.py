@@ -17,3 +17,5 @@ prices = []
 for item in items:
     prices.append({"url": item['name'], 'price': (float(item['price'])/float(item['gb'])), "desc": item['desc']})
 
+prices.sort(key=lambda item: float(item['price']))
+
